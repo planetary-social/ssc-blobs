@@ -1,5 +1,22 @@
 {
+  "name": "ssc-blobs",
+  "description": "Store blobs",
+  "version": "0.0.0",
+  "main": "index.js",
   "devDependencies": {
     "cloudinary": "^1.27.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetary-social/ssc-blobs.git"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/planetary-social/ssc-blobs/issues"
+  },
+  "homepage": "https://github.com/planetary-social/ssc-blobs#readme"
 }
