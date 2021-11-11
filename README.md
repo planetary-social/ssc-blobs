@@ -24,8 +24,7 @@ return a URL for the given hash
 var fs = require('fs')
 require('dotenv').config()
 let cloudinary = require("cloudinary").v2;
-var { cloudinary } = require('ssc-blobs')
-var { write, read } = cloudinary
+var { write, read } = require('../').cloudinary
 var test = require('tape')
 
 var caracal = fs.readFileSync(__dirname + '/caracal.jpg')
