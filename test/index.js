@@ -2,12 +2,12 @@ require('dotenv').config()
 let cloudinary = require("cloudinary").v2;
 var fs = require('fs')
 var test = require('tape')
-var { write, read } = require('../').cloudinary
+var { write, getUrl } = require('../').cloudinary
 
 var caracal = fs.readFileSync(__dirname + '/caracal.jpg')
 let base64Caracal = 'data:image/png;base64,' + caracal.toString('base64')
 
-cloudinary.config({ 
+cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
@@ -24,9 +24,10 @@ test('write', t => {
         })
 })
 
-test('read', t => {
-    var url = read(cloudinary, _hash)
+test('getUrl', t => {
+    var url = getUrl(cloudinary, _hash)
     t.ok(url.includes('http://res.cloudinary.com'), 'should return a url')
     t.ok(url.includes(_hash), 'should use the hash as filename')
     t.end()
 })
+

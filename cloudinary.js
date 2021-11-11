@@ -18,8 +18,9 @@ function write (cloudinary, file) {
 
 }
 
-function read (cloudinary, hash) {
+function getUrl (cloudinary, hash) {
     return cloudinary.url(hash)
 }
 
-module.exports = { write, read }
+module.exports = { write, getUrl }
+
