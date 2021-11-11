@@ -2,6 +2,12 @@
 
 Store blobs
 
+## install
+
+```
+$ npm i @planetary-ssb/ssc-blobs
+```
+
 ## cloudinary
 Use cloudinary as a content-addressable store by using a hash as the filename.
 
