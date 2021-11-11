@@ -1,5 +1,5 @@
 {
-  "name": "ssc-blobs",
+  "name": "@planetary-ssb/ssc-blobs",
   "description": "Store blobs",
   "version": "0.0.0",
   "main": "index.js",
