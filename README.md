@@ -3,7 +3,7 @@
 Store blobs
 
 ## cloudinary
-Use cloudinary in a way that is content-addressable by using a hash as the filename.
+Use cloudinary as a content-addressable store by using a hash as the filename.
 
 ### API
 `.write` returns a promise for the hash of the file that you're writing
