@@ -1,7 +1,7 @@
 {
   "name": "@planetary-ssb/ssc-blobs",
   "description": "Store blobs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "devDependencies": {
     "cloudinary": "^1.27.1",
