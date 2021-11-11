@@ -2,7 +2,7 @@ require('dotenv').config()
 let cloudinary = require("cloudinary").v2;
 var fs = require('fs')
 var test = require('tape')
-var { write, read } = require('../')
+var { write, read } = require('../').cloudinary
 
 var caracal = fs.readFileSync(__dirname + '/caracal.jpg')
 let base64Caracal = 'data:image/png;base64,' + caracal.toString('base64')
