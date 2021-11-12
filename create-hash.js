@@ -6,3 +6,4 @@ module.exports = function createHash (file) {
     h.update(enc.encode(file));
     return h.hexDigest();  // returns string with hex digest
 }
+

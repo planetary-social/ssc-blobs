@@ -15,7 +15,7 @@ Use cloudinary as a content-addressable store by using a hash as the filename.
 #### .write
 returns a promise for the hash of the file that you're writing
 
-#### .read
+#### .getUrl
 return a URL for the given hash
 
 ### example
@@ -24,7 +24,7 @@ return a URL for the given hash
 var fs = require('fs')
 require('dotenv').config()
 let cloudinary = require("cloudinary").v2;
-var { write, read } = require('../').cloudinary
+var { write, getUrl } = require('../').cloudinary
 var test = require('tape')
 
 var caracal = fs.readFileSync(__dirname + '/caracal.jpg')
@@ -47,8 +47,8 @@ test('write', t => {
         })
 })
 
-test('read', t => {
-    var url = read(cloudinary, _hash)
+test('getUrl', t => {
+    var url = getUrl(cloudinary, _hash)
     t.ok(url.includes('http://res.cloudinary.com'), 'should return a url')
     t.ok(url.includes(_hash), 'should use the hash as filename')
     t.end()
