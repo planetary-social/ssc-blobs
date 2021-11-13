@@ -1,26 +1,30 @@
 var createHash = require('./create-hash')
 
-function write (cloudinary, file) {
-    var hash = createHash(file)
+function Client (cloudinary) {
+    function write (file) {
+        var hash = createHash(file)
 
-    return new Promise(function (resolve, reject) {
-        cloudinary.uploader.upload(file, {
-            public_id: hash,
-            overwrite: true
-        }, function (err, res) {
-            if (err) {
-                return reject(err)
-            }
+        return new Promise(function (resolve, reject) {
+            cloudinary.uploader.upload(file, {
+                public_id: hash,
+                overwrite: true
+            }, function (err, res) {
+                if (err) {
+                    return reject(err)
+                }
 
-            resolve(hash, res)
+                resolve(hash, res)
+            })
         })
-    })
 
+    }
+
+    function getUrl (hash) {
+        return cloudinary.url(hash)
+    }
+
+    return { write, getUrl }
 }
 
-function getUrl (cloudinary, hash) {
-    return cloudinary.url(hash)
-}
 
-module.exports = { write, getUrl }
-
+module.exports = Client
