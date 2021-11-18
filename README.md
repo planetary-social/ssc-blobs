@@ -16,8 +16,10 @@ Use cloudinary as a content-addressable store by using a hash as the filename.
 let cloudinary = require("cloudinary").v2;
 cloudinary.config({ /*...*/ });
 var client = require('@planetary-ssb/ssc-blobs').cloudinary(cloudinary)
-client.write(file)
+var hash = await client.write(file)
+// =>  7602e0d96bdcb35fc90e085840fcbe8873d8ce342efe7ec24a446b269093eb47
 client.url(hash)
+// => http://res.cloudinary.com/https-www-planetary-social/image/upload/7602e0d96bdcb35fc90e085840fcbe8873d8ce342efe7ec24a446b269093eb47
 ```
 
 ### example
