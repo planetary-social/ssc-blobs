@@ -28,7 +28,6 @@ test('write', t => {
 
 test('getUrl', t => {
     var url = client.getUrl(_hash)
-    console.log('url', url)
     t.ok(url.includes('http://res.cloudinary.com'), 'should return a url')
     t.ok(url.includes(_hash), 'should use the hash as filename')
     t.end()
